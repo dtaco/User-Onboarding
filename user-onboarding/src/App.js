@@ -1,3 +1,5 @@
+// !!!!!!!!!!!!! PLEASE CHECK FOR TESTING USING cypress.io !!!!!!!!!!!!!!!
+
 import React, { useState } from 'react';
 import axios from 'axios';
 import './App.css';
@@ -27,6 +29,7 @@ function App() {
   const handleSubmit = () => {
     axios.post('https://reqres.in/api/users', formValues)
     .then(res => {
+      console.log(res.data)
       setUsers([res.data, ...users])
     })
     .catch(err => console.error(err))
@@ -55,7 +58,7 @@ function App() {
       <div key={user.id}>
         <p>{user.createdAt}</p>
         <p>{user.email}</p>
-        <p>{user.name}</p>
+        <p>{user.username}</p>
       </div>
     ))}
     </div>

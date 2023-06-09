@@ -51,6 +51,7 @@ const Form = (props) => {
                 type="checkbox"
                 name="tos"
                 checked={tos}
+                value={tos}
                 onChange={onChange}
                 />
             </label>
